@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import MainLayout from "./components/layout/MainLayout";
 import Dashboard from "./pages/Dashboard";
 import PhoneNumbers from "./pages/PhoneNumbers";
+import VoiceAgents from "./pages/VoiceAgents";
+import KnowledgeBase from "./pages/KnowledgeBase";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -17,12 +20,13 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Navigate to="/dashboard" replace />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="phone-numbers" element={<PhoneNumbers />} />
-            <Route path="voice-agents" element={<div className="p-6"><h1 className="text-2xl font-bold">Voice Agents</h1><p className="text-gray-600">Voice agents management coming soon...</p></div>} />
-            <Route path="knowledge-base" element={<div className="p-6"><h1 className="text-2xl font-bold">Knowledge Base</h1><p className="text-gray-600">Knowledge base management coming soon...</p></div>} />
+            <Route path="voice-agents" element={<VoiceAgents />} />
+            <Route path="knowledge-base" element={<KnowledgeBase />} />
             <Route path="batch-call" element={<div className="p-6"><h1 className="text-2xl font-bold">Batch Call</h1><p className="text-gray-600">Batch calling features coming soon...</p></div>} />
             <Route path="call-history" element={<div className="p-6"><h1 className="text-2xl font-bold">Call History</h1><p className="text-gray-600">Call history and logs coming soon...</p></div>} />
             <Route path="analytics" element={<div className="p-6"><h1 className="text-2xl font-bold">Analytics</h1><p className="text-gray-600">Analytics dashboard coming soon...</p></div>} />

@@ -41,10 +41,10 @@ const NavItem = ({
       to={to}
       className={cn(
         "flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-md transition-all duration-200 font-medium text-sm",
-        isActive && "bg-gray-50 text-blue-600"
+        isActive && "bg-black text-white"
       )}
     >
-      <Icon size={20} className={isActive ? "text-blue-600" : "text-gray-500"} />
+      <Icon size={20} className={isActive ? "text-white" : "text-gray-500"} />
       <span>{label}</span>
       {isNew && (
         <span className="bg-blue-500 text-white text-xs px-1.5 py-0.5 rounded ml-auto">
